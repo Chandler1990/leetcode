@@ -18,18 +18,18 @@ public:
       x = 1 / x;
       n = -1 * n;
     }
+      double result =1 ;
     while(n > 0)
     {
-      double result =1 ;
       if(n%2 == 1)
         result *= x;
 
         n /= 2;
-        x *= x；
+        x *= x;
     }
-    return result;
+        return result;
   }
-}
+};
 
 int main()
 {
@@ -37,6 +37,6 @@ int main()
     double x=100;
     int n=2;
     Solution tar;
-    cout << tar.pow_new(x,n);
+    std::cout <<"###########"<< tar.pow_new(x,n);
     return true;
 }
