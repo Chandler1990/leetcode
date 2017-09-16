@@ -5,6 +5,8 @@ Implement pow(x, n).
 最简单的办法是根据n进行循环并计算乘积，但是这样的时间开销比较大。最好能够再减少循环次数，例如n4可以表示成（n2）2。将n表示成二进制的格式便能够轻松知道如何减少循环次数。
 */
 #include "iostream"
+using namespace std;
+
 
 class Solution
 {
@@ -34,9 +36,13 @@ public:
 int main()
 {
     double result = 0;
-    double x=100;
-    int n=2;
+    double x=0;
+    int n=0;
     Solution tar;
-    std::cout <<"###########"<< tar.pow_new(x,n);
+    cout<<"please input the value of x: ";
+    cin >> x;
+    cout<<"please input the value of n: ";
+    cin>> n;
+    cout <<"the result is "<< tar.pow_new(x,n)<<"\n";
     return true;
 }
