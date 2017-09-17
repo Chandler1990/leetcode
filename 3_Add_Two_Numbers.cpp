@@ -18,7 +18,7 @@ Output: 7 -> 0 -> 8
  ide->next = new ListNode(4);
  ide->next->next = new ListNode(5);
  */
- typedef NULL null
+#define null NULL
  struct ListNode
  {
    int val;
@@ -27,7 +27,7 @@ Output: 7 -> 0 -> 8
    ListNode(int x)
    {
     val(x) = x;
-    next = NULL; 
+    next = NULL;
    }
  }
 
