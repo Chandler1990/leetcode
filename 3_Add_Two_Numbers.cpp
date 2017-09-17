@@ -18,18 +18,21 @@ Output: 7 -> 0 -> 8
  ide->next = new ListNode(4);
  ide->next->next = new ListNode(5);
  */
-#define null NULL
+#include "iostream"
+using namespace std;
  struct ListNode
  {
    int val;
    ListNode *next;
-   //ListNode(int x) : val(x), next(NULL){}
+   ListNode(int x) : val(x), next(NULL){} //和下面的初始化方式一样，但是两者不能同时使用
+   #if 0
    ListNode(int x)
    {
-    val(x) = x;
+    val = x;
     next = NULL;
    }
- }
+   #endif
+ };
 
 class Solution {
 public:
@@ -54,6 +57,7 @@ public:
             int tmp = val1 + val2 + carry;
             ptr->next = new ListNode(tmp % 10);
             carry = tmp / 10;
+			
             ptr = ptr->next;
         }
 
@@ -64,17 +68,41 @@ public:
     }
 };
 
+void Get_Value(ListNode* ptr)
+{
+	int num = 0;
+	cout<< "please enter numbers!\n" <<endl;
+	while(cin >> num) 
+	{
+		ptr->next = new ListNode(num);
+		ptr = ptr->next;
+	} 
+}
+
 int main()
 {
   ListNode* l1 = NULL;
   ListNode* l2 = NULL;
+  ListNode* ptr = NULL; 
+  ListNode* result = NULL;
+  ListNode* visit = NULL;
   Solution obj;
-  l1 = new ListNode(1);
-  l1->next = new ListNode(2);
-  l1->next->next = new ListNode(3);
-  l2 = new ListNode(1);
-  l2->next = new ListNode(2);
-  l2->next->next = new ListNode(3);
-  obj.addTwoNumbers(l1,l2);
-  reture true;
+  
+  l1 = new ListNode(0);
+  ptr = l1;
+  Get_Value(ptr);
+  cin.clear(); //这个问题困扰我很久，参考https://segmentfault.com/q/1010000006119215解决的。在第一次执行完获取值操作后，第二次获取值直接跳过了。
+  cin.ignore();
+  l2 = new ListNode(0);
+  ptr = l2;
+  Get_Value(ptr);
+  
+  result = obj.addTwoNumbers(l1,l2);
+  visit = result;
+  while(NULL != visit)
+  {
+	  cout << visit->val <<endl;
+	  visit = visit->next;
+  }
+  return true;
 }
