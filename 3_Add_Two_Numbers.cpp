@@ -18,11 +18,17 @@ Output: 7 -> 0 -> 8
  ide->next = new ListNode(4);
  ide->next->next = new ListNode(5);
  */
+ typedef NULL null
  struct ListNode
  {
    int val;
    ListNode *next;
-   ListNode(int x) : val(x), next(NULL){}
+   //ListNode(int x) : val(x), next(NULL){}
+   ListNode(int x)
+   {
+    val(x) = x;
+    next = NULL; 
+   }
  }
 
 class Solution {
