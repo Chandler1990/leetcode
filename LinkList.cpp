@@ -27,7 +27,7 @@ ListNode* Reverse_List(ListNode* head){
 	cout << "Reverse List Start!" <<endl;
 	ListNode* ptr = head;
 	ListNode* temp =NULL;
-	ListNode* pre = NULL;
+	static ListNode* pre = NULL;
 	while(ptr->Next != NULL){
 		temp = ptr->Next;
 		ptr->Next = pre;
