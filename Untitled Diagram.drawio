@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2022-04-19T10:06:22.472Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44" etag="Eh4KnkzjUvZ_vQtawtSa" version="17.4.5" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-04-20T01:56:49.785Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44" etag="4537fQQdEeBhIfJ5Nyri" version="17.4.5" type="github" pages="2">
   <diagram name="Page-1" id="74e2e168-ea6b-b213-b513-2b3c1d86103e">
     <mxGraphModel dx="2522" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="77e6c97f196da883-1" value="DP" style="swimlane;html=1;childLayout=stackLayout;startSize=20;rounded=0;shadow=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;" parent="1" vertex="1">
-          <mxGeometry x="320" y="40" width="1020" height="1490" as="geometry" />
+          <mxGeometry x="320" y="40" width="1180" height="1490" as="geometry" />
         </mxCell>
         <mxCell id="77e6c97f196da883-2" value="PKTIO" style="swimlane;html=1;startSize=20;fillColor=#FFFFFF;" parent="77e6c97f196da883-1" vertex="1">
           <mxGeometry y="20" width="160" height="1470" as="geometry" />
@@ -58,6 +58,9 @@
         </mxCell>
         <mxCell id="PcmKn_jxVm2dnXxpcMdr-51" value="接收HTTP REQUEST消息：&lt;br&gt;HTTP Request + DP_ControlHeader + PFCP Request" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" parent="PcmKn_jxVm2dnXxpcMdr-52" vertex="1">
           <mxGeometry x="30" y="300" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OLZzonzuNLtUbl7lom3D-1" value="Client建立" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" vertex="1" parent="PcmKn_jxVm2dnXxpcMdr-52">
+          <mxGeometry x="30" y="150" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="PcmKn_jxVm2dnXxpcMdr-54" value="upf_pfcp" style="swimlane;html=1;startSize=20;" parent="77e6c97f196da883-7" vertex="1">
           <mxGeometry x="-160" width="160" height="1470" as="geometry" />
@@ -205,6 +208,11 @@
         </mxCell>
         <mxCell id="7Y10AMbQhOi3CfOI5dwk-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="77e6c97f196da883-1" source="7Y10AMbQhOi3CfOI5dwk-18" target="PcmKn_jxVm2dnXxpcMdr-55">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OLZzonzuNLtUbl7lom3D-59" value="main" style="swimlane;html=1;startSize=20;" vertex="1" parent="77e6c97f196da883-1">
+          <mxGeometry x="1020" y="20" width="160" height="1470" as="geometry">
+            <mxRectangle x="1020" y="20" width="30" height="1470" as="alternateBounds" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="77e6c97f196da883-3" value="PEP" style="swimlane;html=1;startSize=20;" parent="1" vertex="1">
           <mxGeometry x="-80" y="40" width="160" height="1000" as="geometry" />
