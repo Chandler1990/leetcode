@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-20T08:54:06.732Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44" etag="Boz0PxdvrRALAlRcejT4" version="17.4.5" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-04-21T02:15:39.619Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.44" etag="jb_7C4YSam24K5AK0vAa" version="17.4.5" type="github" pages="2">
   <diagram name="Page-1" id="74e2e168-ea6b-b213-b513-2b3c1d86103e">
-    <mxGraphModel dx="2048" dy="529" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2238" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -10,7 +10,7 @@
         <mxCell id="77e6c97f196da883-2" value="PKTIO" style="swimlane;html=1;startSize=20;fillColor=#FFFFFF;" parent="77e6c97f196da883-1" vertex="1">
           <mxGeometry y="20" width="160" height="1470" as="geometry" />
         </mxCell>
-        <mxCell id="PcmKn_jxVm2dnXxpcMdr-72" value="ingress处理&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" parent="77e6c97f196da883-2" vertex="1">
+        <mxCell id="PcmKn_jxVm2dnXxpcMdr-72" value="ingress处理&lt;br&gt;报文放入High队列" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" parent="77e6c97f196da883-2" vertex="1">
           <mxGeometry x="30.5" y="36" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="PcmKn_jxVm2dnXxpcMdr-73" value="egress处理" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" parent="77e6c97f196da883-2" vertex="1">
@@ -259,6 +259,9 @@
         </mxCell>
         <mxCell id="OLZzonzuNLtUbl7lom3D-67" value="TCP Server初始化" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" vertex="1" parent="OLZzonzuNLtUbl7lom3D-59">
           <mxGeometry x="30" y="70" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dWOj3kWxru07sPwgwxn2-3" value="&lt;span style=&quot;font-family: &amp;#34;helvetica&amp;#34;&quot;&gt;&lt;font style=&quot;font-size: 8px&quot;&gt;ctrl_mbox_rx_thread&lt;/font&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" vertex="1" parent="OLZzonzuNLtUbl7lom3D-59">
+          <mxGeometry x="30" y="150" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="OLZzonzuNLtUbl7lom3D-278" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="77e6c97f196da883-1" source="OLZzonzuNLtUbl7lom3D-273" target="OLZzonzuNLtUbl7lom3D-277">
           <mxGeometry relative="1" as="geometry" />
