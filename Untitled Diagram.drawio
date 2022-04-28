@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-28T04:19:48.043Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50" etag="frrATu85wwwNbWEF5cQ7" version="17.4.6" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2022-04-28T04:32:55.612Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50" etag="92Rv2qfdIYxE_WwqVBoW" version="17.4.6" type="github" pages="4">
   <diagram name="Session Establishment" id="74e2e168-ea6b-b213-b513-2b3c1d86103e">
     <mxGraphModel dx="2138" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -560,7 +560,7 @@
           <mxGeometry x="-1810" y="915" width="530" height="660" as="geometry" />
         </mxCell>
         <mxCell id="_qEMbvkH-hCVrv62ZngZ-27" value="pktio_array_process" style="swimlane;" vertex="1" parent="1">
-          <mxGeometry x="310" y="1000" width="230" height="400" as="geometry">
+          <mxGeometry x="310" y="1060" width="230" height="400" as="geometry">
             <mxRectangle x="330" y="380" width="230" height="23" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -591,11 +591,31 @@
         <mxCell id="_qEMbvkH-hCVrv62ZngZ-38" value="调用后有个记录" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#FF0000;" vertex="1" parent="1">
           <mxGeometry x="203" y="730" width="100" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="_qEMbvkH-hCVrv62ZngZ-44" value="poll报文，从libpio收包，并交给pktio" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;dashed=1;labelBackgroundColor=none;labelBorderColor=none;fontSize=12;fontColor=#FF0000;strokeColor=default;" vertex="1" parent="1">
-          <mxGeometry x="550" y="570" width="120" height="80" as="geometry" />
+        <mxCell id="_qEMbvkH-hCVrv62ZngZ-44" value="1.poll报文，从libpio收包，并交给pktio" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;dashed=1;labelBackgroundColor=none;labelBorderColor=none;fontSize=12;fontColor=#FF0000;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="550" y="570" width="140" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="_qEMbvkH-hCVrv62ZngZ-45" value="查找worker cpu，将报文放入worker cpu所在的队列中，分高低优先级" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;dashed=1;labelBackgroundColor=none;labelBorderColor=none;fontSize=12;fontColor=#FF0000;strokeColor=default;" vertex="1" parent="1">
-          <mxGeometry x="550" y="1020" width="180" height="90" as="geometry" />
+        <mxCell id="_qEMbvkH-hCVrv62ZngZ-45" value="2.查找worker cpu，将报文放入worker cpu所在的队列中，分高低优先级" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;dashed=1;labelBackgroundColor=none;labelBorderColor=none;fontSize=12;fontColor=#FF0000;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="550" y="1060" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="qtJZjXyuk3FGftqfTJSP-1" value="调用DPDK接口，从队列libpio-&amp;gt;cpu[cpuid]-&amp;gt;rx_queues[port]中收包，并放入libpio-&amp;gt;cpu[cpuid]-&amp;gt;pkts中" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#FF0000;" vertex="1" parent="1">
+          <mxGeometry x="600" y="830" width="560" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="qtJZjXyuk3FGftqfTJSP-2" value="将报文放入pktio队列pktio-&amp;gt;cpu_data[cpuid]-&amp;gt;packet_array中" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;fontColor=#FF0000;" vertex="1" parent="1">
+          <mxGeometry x="690" y="950" width="340" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="qtJZjXyuk3FGftqfTJSP-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;labelBorderColor=none;fontSize=12;fontColor=#FF0000;" edge="1" parent="1" source="_qEMbvkH-hCVrv62ZngZ-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qtJZjXyuk3FGftqfTJSP-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;labelBorderColor=none;fontSize=12;fontColor=#FF0000;" edge="1" parent="1" source="qtJZjXyuk3FGftqfTJSP-7" target="qtJZjXyuk3FGftqfTJSP-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qtJZjXyuk3FGftqfTJSP-7" value="&lt;span style=&quot;color: rgb(0 , 0 , 0)&quot;&gt;pio_rx&lt;/span&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;labelBackgroundColor=none;labelBorderColor=none;fontSize=12;fontColor=#FF0000;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="600" y="880" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qtJZjXyuk3FGftqfTJSP-8" value="&lt;span style=&quot;color: rgb(0 , 0 , 0)&quot;&gt;packet_array_push&lt;/span&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;labelBackgroundColor=none;labelBorderColor=none;fontSize=12;fontColor=#FF0000;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="575" y="980" width="170" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
