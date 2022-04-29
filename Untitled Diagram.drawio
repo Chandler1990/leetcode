@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-29T03:16:31.992Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50" etag="p3RCaeWp48AaguTw6Wag" version="17.4.6" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2022-04-29T04:17:19.940Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50" etag="RCM3PYv2eGylAw6OmynZ" version="17.4.6" type="github" pages="5">
   <diagram name="Session Establishment" id="74e2e168-ea6b-b213-b513-2b3c1d86103e">
     <mxGraphModel dx="2138" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -460,7 +460,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="sSfgoWu25dCt7Ag2n_tR" name="Traffic procedure">
-    <mxGraphModel dx="5285" dy="1708" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="5933" dy="2088" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -725,16 +725,37 @@
           <mxGeometry x="560" y="1460" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="eIVlhD30pPiqgxk6CBb6-10" value="pktio_ingress_packet_classify" style="swimlane;dashed=1;labelBackgroundColor=#00FF00;labelBorderColor=default;fontColor=#FF0000;startSize=23;" vertex="1" parent="1">
-          <mxGeometry x="1110" y="1325" width="282.5" height="370" as="geometry" />
+          <mxGeometry x="1110" y="1142.5" width="390" height="735" as="geometry" />
+        </mxCell>
+        <mxCell id="eIVlhD30pPiqgxk6CBb6-51" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;labelBackgroundColor=none;labelBorderColor=default;fontColor=#000000;" vertex="1" parent="eIVlhD30pPiqgxk6CBb6-10">
+          <mxGeometry x="10" y="265" width="370" height="455" as="geometry" />
+        </mxCell>
+        <mxCell id="eIVlhD30pPiqgxk6CBb6-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;fontColor=#000000;" edge="1" parent="eIVlhD30pPiqgxk6CBb6-10" source="eIVlhD30pPiqgxk6CBb6-13" target="eIVlhD30pPiqgxk6CBb6-42">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="eIVlhD30pPiqgxk6CBb6-13" value="pktio_get_nwid_slice_prefix_length_dual" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;labelBackgroundColor=none;labelBorderColor=none;fontColor=#000000;" vertex="1" parent="eIVlhD30pPiqgxk6CBb6-10">
-          <mxGeometry x="32.5" y="65" width="215" height="60" as="geometry" />
+          <mxGeometry x="87.5" y="65" width="215" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eIVlhD30pPiqgxk6CBb6-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;fontColor=#000000;" edge="1" parent="eIVlhD30pPiqgxk6CBb6-10" source="eIVlhD30pPiqgxk6CBb6-42" target="eIVlhD30pPiqgxk6CBb6-46">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="eIVlhD30pPiqgxk6CBb6-42" value="ingress_preclassify_packet" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;labelBackgroundColor=none;labelBorderColor=none;fontColor=#000000;" vertex="1" parent="eIVlhD30pPiqgxk6CBb6-10">
-          <mxGeometry x="32.5" y="165" width="215" height="60" as="geometry" />
+          <mxGeometry x="87.5" y="165" width="215" height="60" as="geometry" />
         </mxCell>
         <mxCell id="eIVlhD30pPiqgxk6CBb6-43" value="预分类后有个记录" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#000000;" vertex="1" parent="eIVlhD30pPiqgxk6CBb6-10">
           <mxGeometry x="137.5" y="245" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="eIVlhD30pPiqgxk6CBb6-46" value="根据预分类结果context-&amp;gt;preclass&lt;br&gt;&lt;br&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; case PKTIO_PRECLASS_EXTERNAL:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; case PKTIO_PRECLASS_INTERNAL_SERVICE:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; case PKTIO_PRECLASS_SERVICE_FUNCTION:&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;labelBackgroundColor=none;labelBorderColor=none;fontColor=#000000;align=left;" vertex="1" parent="eIVlhD30pPiqgxk6CBb6-10">
+          <mxGeometry x="31.25" y="295" width="327.5" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="eIVlhD30pPiqgxk6CBb6-47" value="&lt;div&gt;&amp;nbsp; &amp;nbsp; case PKTIO_PRECLASS_FORWARD_IP_FLOW:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; case PKTIO_PRECLASS_FORWARD_GTP:&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;labelBackgroundColor=none;labelBorderColor=none;fontColor=#000000;align=left;" vertex="1" parent="eIVlhD30pPiqgxk6CBb6-10">
+          <mxGeometry x="32.5" y="457.5" width="327.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="eIVlhD30pPiqgxk6CBb6-48" value="&lt;div&gt;&amp;nbsp; &amp;nbsp; case PKTIO_PRECLASS_UNKNOWN:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; case PKTIO_PRECLASS_FORWARD:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; case PKTIO_PRECLASS_FORWARD_NOT_OURS:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; case PKTIO_PRECLASS_FORWARD_FRAGMENT:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; case PKTIO_PRECLASS_DROP_MULTI_SEGMENT:&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; case PKTIO_PRECLASS_LAST:&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;labelBackgroundColor=none;labelBorderColor=none;fontColor=#000000;align=left;" vertex="1" parent="eIVlhD30pPiqgxk6CBb6-10">
+          <mxGeometry x="32.5" y="587.5" width="327.5" height="112.5" as="geometry" />
+        </mxCell>
+        <mxCell id="eIVlhD30pPiqgxk6CBb6-52" value="switch-case" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#000000;" vertex="1" parent="eIVlhD30pPiqgxk6CBb6-10">
+          <mxGeometry x="10" y="265" width="80" height="20" as="geometry" />
         </mxCell>
         <mxCell id="eIVlhD30pPiqgxk6CBb6-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FF0000;dashed=1;" edge="1" parent="1" source="eIVlhD30pPiqgxk6CBb6-7" target="eIVlhD30pPiqgxk6CBb6-10">
           <mxGeometry relative="1" as="geometry" />
@@ -760,7 +781,7 @@
         <mxCell id="eIVlhD30pPiqgxk6CBb6-29" value="&lt;div&gt;2.4 生成flow-key(rtid/teid/qfi/tuple)，用于查找flow_table&lt;/div&gt;&lt;div&gt;// 判断哪些流量需要创建 flow&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#FF0000;" vertex="1" parent="1">
           <mxGeometry x="552" y="1620" width="310" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="eIVlhD30pPiqgxk6CBb6-30" value="2.5 将数据从内存prefetch到cache，每次读一个cache line 64B" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#FF0000;labelBackgroundColor=none;labelBorderColor=default;" vertex="1" parent="1">
+        <mxCell id="eIVlhD30pPiqgxk6CBb6-30" value="2.5 将数据从内存prefetch到cache，每次读一个cache line 64B" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#FF0000;labelBackgroundColor=none;labelBorderColor=none;" vertex="1" parent="1">
           <mxGeometry x="552" y="1750" width="350" height="20" as="geometry" />
         </mxCell>
         <mxCell id="eIVlhD30pPiqgxk6CBb6-34" value="2.6 查找目的worker，判断是否走快速路径，是否需要转其他DP处理" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#FF0000;" vertex="1" parent="1">
@@ -776,7 +797,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="eIVlhD30pPiqgxk6CBb6-44" value="++stats-&amp;gt;ingress_pkts_per_preclass[context-&amp;gt;preclass];" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#FF0000;" vertex="1" parent="1">
-          <mxGeometry x="1410" y="1570" width="310" height="20" as="geometry" />
+          <mxGeometry x="1530" y="1387.5" width="310" height="20" as="geometry" />
         </mxCell>
         <mxCell id="eIVlhD30pPiqgxk6CBb6-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;fontColor=#000000;" edge="1" parent="1" source="eIVlhD30pPiqgxk6CBb6-43" target="eIVlhD30pPiqgxk6CBb6-44">
           <mxGeometry relative="1" as="geometry" />
