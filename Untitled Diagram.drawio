@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-29T06:50:04.016Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50" etag="dUPmCGrhYaNjr2kiTPFO" version="17.4.6" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2022-04-29T07:00:26.479Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36 Edg/100.0.1185.50" etag="VmF_czV84Gor5TDot1-R" version="17.4.6" type="github" pages="6">
   <diagram name="Session Establishment" id="74e2e168-ea6b-b213-b513-2b3c1d86103e">
     <mxGraphModel dx="2138" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
@@ -460,7 +460,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="sSfgoWu25dCt7Ag2n_tR" name="Traffic procedure">
-    <mxGraphModel dx="5579" dy="1878" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="5164" dy="1635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -857,9 +857,15 @@
           <mxGeometry x="1500" y="1520" width="420" height="20" as="geometry" />
         </mxCell>
         <mxCell id="eIVlhD30pPiqgxk6CBb6-72" value="&lt;div&gt;pktio_set_packet_offsets(const classifier_result_t* result, packet_t* packet)&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // Layer4 start&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (result-&amp;gt;udp_hdr) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; packet_set_layer4_start(packet, result-&amp;gt;udp_hdr);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; // Payload start&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; if (result-&amp;gt;gtp_hdr) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; packet_set_payload_start(packet, result-&amp;gt;gtp_hdr);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; else if (result-&amp;gt;gnv_hdr) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; packet_set_payload_start(packet, result-&amp;gt;gnv_hdr);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; else if (result-&amp;gt;gre_hdr) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; packet_set_payload_start(packet, result-&amp;gt;gre_hdr);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; else if (result-&amp;gt;inner_l3_start) {&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; packet_set_payload_start(packet, result-&amp;gt;inner_l3_start);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#000000;labelBackgroundColor=#00FF00;labelBorderColor=default;" vertex="1" parent="1">
-          <mxGeometry x="1980" y="1359" width="410" height="300" as="geometry" />
+          <mxGeometry x="2240" y="1359" width="410" height="300" as="geometry" />
         </mxCell>
         <mxCell id="eIVlhD30pPiqgxk6CBb6-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;fontColor=#FF0000;" edge="1" parent="1" source="eIVlhD30pPiqgxk6CBb6-68" target="eIVlhD30pPiqgxk6CBb6-71">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xfB-B6OgGLV5VhqFWDXZ-8" value="&lt;div&gt;根据host_type，分为几种场景：&lt;br&gt;&lt;span&gt;1.下行报文：根据MSIP/NWID/slice_mask计算load_index&lt;br&gt;2.上行报文：根据TEID计算load_index, cpuid为无效值，GTP 报文的 teid 在此处解析，用于 flow 的创建&lt;br&gt;3. PFCP报文：直接交给本DP的egress做punt处理（egress cpu根据Round Robin选择）&lt;br&gt;4. 其他报文&lt;br&gt;&lt;br&gt;将解析结果存入context-&amp;gt;result当中。&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#FF0000;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="1355" width="560" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="xfB-B6OgGLV5VhqFWDXZ-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;fontColor=#FF0000;" edge="1" parent="1" source="eIVlhD30pPiqgxk6CBb6-54" target="xfB-B6OgGLV5VhqFWDXZ-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
